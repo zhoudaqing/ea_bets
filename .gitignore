@@ -1,0 +1,4 @@
+/vendor/
+.idea/
+/src/env.php
+/client_secret.json

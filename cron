@@ -1,0 +1,17 @@
+##
+0,20,40 * * * * php /var/www/public/src/cron_getBetstudyPredictions.php > /var/log/cron_getBetstudyPredictions.log 2>&1
+1,21,41 * * * * php /var/www/public/src/cron_getWettportalEvents.php > /var/log/cron_getWettportalEvents.log 2>&1
+2,22,42 * * * * php /var/www/public/src/cron_resolver.php > /var/log/cron_resolver.log 2>&1
+3,23,43 * * * * php /var/www/public/src/cron_getWettportalOdds.php > /var/log/cron_getWettportalOdds.log 2>&1
+4,24,44 * * * * php /var/www/public/src/cron_toGoogleSheet.php > /var/log/cron_toGoogleSheet.log 2>&1
+
+*/5 * * * * php /var/www/public/src/cron_updateCoefficients.php > /var/log/cron_updateCoefficients.log 2>&1
+
+0-59/2 * * * * php /var/www/public/src/cron_getResult.php > /var/log/cron_getResult.log 2>&1
+1-59/2 * * * * php /var/www/public/src/cron_postResult.php > /var/log/cron_postResult.log 2>&1
+
+* * * * * php /var/www/public/src/telegram_getUpdates.php > /var/log/telegram_getUpdates.log 2>&1
+* * * * * php /var/www/public/src/telegram_sendMessage.php > /var/log/telegram_sendMessage.log 2>&1
+
+%progdir%\modules\wget\bin\wget.exe -q --no-cache http://365bet.loc/DO/src/cron_getBetstudyPredictions.php -O %progdir%\userdata\temp\temp.txt
+curl "https://betsstrat.000webhostapp.com/DO/src/telegram_sendMessage.php" >/dev/null 2>&1

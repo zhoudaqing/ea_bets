@@ -1,0 +1,13 @@
+{
+    "require": {
+        "symfony/dom-crawler": "^3.2",
+        "symfony/css-selector": "^3.2",
+        "mongodb/mongodb": "^1.1",
+        "symfony/dependency-injection": "^3.2",
+        "revolution/laravel-google-sheets": "^2.1",
+        "irazasyed/telegram-bot-sdk": "^2.2"
+    },
+    "autoload": {
+        "psr-4" : { "" : "src/" }
+    }
+}
